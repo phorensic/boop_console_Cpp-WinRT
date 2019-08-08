@@ -28,12 +28,10 @@ int main()
 			httpResponseBody = ex.message();
 		}
 
-		JsonObject jsonObject = JsonObject();
-		jsonObject = JsonObject::Parse(httpResponseBody);
+		JsonObject jsonObject = JsonObject::Parse(httpResponseBody);
 		IJsonValue dataValue = jsonObject.Lookup(L"data");
 		hstring s = dataValue.Stringify();
-		JsonObject dataObject = JsonObject();
-		dataObject = JsonObject::Parse(s);
+		JsonObject dataObject = JsonObject::Parse(s);
 		hstring amountValue = dataObject.GetNamedString(L"amount");
 
 		std::wcout << "BTCUSD $" << amountValue.c_str() << '\r';
