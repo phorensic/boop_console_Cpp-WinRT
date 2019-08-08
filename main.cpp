@@ -22,7 +22,6 @@ int main()
 			httpResponseMessage = httpClient.GetAsync(requestUri).get();
 			httpResponseMessage.EnsureSuccessStatusCode();
 			httpResponseBody = httpResponseMessage.Content().ReadAsStringAsync().get();
-
 		}
 		catch (hresult_error const& ex)
 		{
@@ -41,8 +40,7 @@ int main()
 		hstring amountValue = dataObject.GetNamedString(L"amount");
 
 		//std::wcout << httpResponseBody.c_str() << std::endl; -- Debug to see full JSON string
-		std::wcout << "$" << amountValue.c_str() << std::endl;
+		std::wcout << "$" << amountValue.c_str() << '\r';
 		sleep_for(30s);
-	} while (httpResponseBody != L"");
-	
+	} while (httpResponseBody != L"");	
 }
