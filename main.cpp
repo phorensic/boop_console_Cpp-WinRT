@@ -29,18 +29,14 @@ int main()
 		}
 
 		JsonObject jsonObject = JsonObject();
-		bool canParse = JsonObject::TryParse(httpResponseBody, jsonObject);
-		bool hasDataKey = jsonObject.HasKey(L"data"); // Debug, look for "data" key at the beginning
+		jsonObject = JsonObject::Parse(httpResponseBody);
 		IJsonValue dataValue = jsonObject.Lookup(L"data");
 		hstring s = dataValue.Stringify();
-
 		JsonObject dataObject = JsonObject();
-		bool canParseAgain = JsonObject::TryParse(s, dataObject);
-		bool hasAmountKey = dataObject.HasKey(L"amount"); // Debug
+		dataObject = JsonObject::Parse(s);
 		hstring amountValue = dataObject.GetNamedString(L"amount");
 
-		//std::wcout << httpResponseBody.c_str() << std::endl; -- Debug to see full JSON string
-		std::wcout << "$" << amountValue.c_str() << '\r';
-		sleep_for(30s);
+		std::wcout << "BTCUSD $" << amountValue.c_str() << '\r';
+		sleep_for(31s);
 	} while (httpResponseBody != L"");	
 }
