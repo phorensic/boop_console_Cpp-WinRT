@@ -6,11 +6,12 @@
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <MinimalCoreWin>true</MinimalCoreWin>
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{3783f066-345e-48ee-b50f-6ba44e316525}</ProjectGuid>
+    <ProjectGuid>{35C02C06-3B28-4AF3-944C-E3BBC4BC7A9F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>boop_console_Cpp_WinRT</RootNamespace>
+    <RootNamespace>boop</RootNamespace>
     <WindowsTargetPlatformVersion Condition=" '$(WindowsTargetPlatformVersion)' == '' ">10.0.18362.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.17134.0</WindowsTargetPlatformMinVersion>
+    <ProjectName>boop</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <ItemGroup Label="ProjectConfigurations">
