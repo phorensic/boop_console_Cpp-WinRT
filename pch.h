@@ -6,3 +6,5 @@
 #include <winrt/Windows.Data.Json.h>
 #include <chrono>
 #include <thread>
+#include <fcntl.h>
+#include <io.h>
